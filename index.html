@@ -1,0 +1,93 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modal Thông Báo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#111;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-box{
+    width:320px;
+    background:#1e1e1e;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    animation:show .25s ease;
+}
+
+.modal-box h2{
+    margin-top:0;
+}
+
+.close{
+    margin-top:15px;
+    background:#5865F2;
+    color:white;
+}
+
+@keyframes show{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+</style>
+</head>
+<body>
+
+<button onclick="openModal()">Mở Thông Báo</button>
+
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <h2>🔔 Thông Báo</h2>
+        <p>Chào mừng bạn đến với website!</p>
+        <button class="close" onclick="closeModal()">Đóng</button>
+    </div>
+</div>
+
+<script>
+function openModal(){
+    document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+window.onload = openModal; // tự hiện khi vào web
+</script>
+
+</body>
+</html>
+```
